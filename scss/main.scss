@@ -1,0 +1,112 @@
+@import './blocks/./_index.scss';
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ComicRelief';
+  src: url('../fonts/ComicRelief.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  // *base styles
+  --main-font: 'Inter', sans-serif;
+  --width-container: 1170px;
+  --padding-container: 15px;
+
+  // *main colors
+  --main-color: #ffffff;
+  --accent-color: #8000ff;
+  --bg-body: #0d0d0d;
+
+  // *states
+  --default-color-ui-elements: rgba(128, 0, 255, 0.2);
+  --hover-color-ui-elements: rgba(128, 0, 255, 0.12);
+  --focus-color: #6200f4;
+  --active-btn: 0 3px 0 #483d8b;
+  --done-note-color: #cdcdcd;
+  --error-color: #ff0000;
+
+  // *header
+  --default-bg-navbar: rgba(22, 22, 22, 0);
+  --active-bg-navbar: rgba(22, 22, 22, 1);
+  --navbar-shadow: 4px 2px 8px rgba(0, 0, 0, 0.2);
+
+  // * notes app
+  --font-note: 'ComicRelief', sans-serif;
+  --paper-color: #ffffff;
+  --paper-box-shadow: rgba(0, 0, 0, 0.15);
+  --input-color: #161616;
+
+  // *footer
+  --bg-footer: #161616;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--main-font);
+  font-weight: 400;
+  color: var(--main-color);
+  background-color: var(--bg-body);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+.container {
+  max-width: calc(var(--width-container) + var(--padding-container) * 2);
+  margin: 0 auto;
+  padding-inline: var(--padding-container);
+}
+
+// *media
+
+@media (max-width: 769px) {
+  // * notes app
+  .notes__forma {
+    flex-wrap: wrap;
+  }
+  .notes__button {
+    width: 100%;
+  }
+}
+@media (max-width: 490px) {
+  // * notes app
+  .notes-list__wrapper {
+    padding: 20px 10px 15px;
+  }
+  .notes__input {
+    padding-left: 10px;
+  }
+  .note__main {
+    gap: 20px;
+  }
+  .notes__item {
+    padding: 0 5px;
+  }
+  .note__btns {
+    column-gap: 5px;
+  }
+  .note__btn {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,31 @@
+.header {
+  width: 100%;
+  min-height: 48px;
+}
+.navbar {
+  width: 100%;
+  min-height: 48px;
+  background-color: var(--default-bg-navbar);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  &--fixed {
+    background-color: var(--active-bg-navbar);
+    box-shadow: var(--navbar-shadow);
+  }
+}
+.navbar__content {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-link {
+  outline: none;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--main-color);
+  letter-spacing: -0.6px;
+}

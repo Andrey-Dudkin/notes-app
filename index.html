@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Приложение «Заметки»</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar">
+        <div class="container">
+          <div class="navbar__content">
+            <a href="#" class="logo-link">
+              <span class="logo-link__span">&lt;ad&gt;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="notes-app">
+        <div class="notes-list">
+          <div class="notes-list__container">
+            <h1 class="notes-list__title">Приложение для ваших заметок!</h1>
+            <div class="notes-list__wrapper">
+              <div class="notes">
+                <form action="#" class="notes__forma notes__forma--create">
+                  <input type="text" name="name" placeholder="Введите текст" class="notes__input notes__input--create" />
+                  <button class="notes__button notes__button--create" type="submit">Создать заметку</button>
+                </form>
+                <ul class="notes__list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

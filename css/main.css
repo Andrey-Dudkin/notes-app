@@ -1,0 +1,270 @@
+.header {
+  width: 100%;
+  min-height: 48px;
+}
+
+.navbar {
+  width: 100%;
+  min-height: 48px;
+  background-color: var(--default-bg-navbar);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+.navbar--fixed {
+  background-color: var(--active-bg-navbar);
+  box-shadow: var(--navbar-shadow);
+}
+
+.navbar__content {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  outline: none;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--main-color);
+  letter-spacing: -0.6px;
+}
+
+.notes-app {
+  padding: clamp(50px, 15vw, 100px) 0;
+}
+
+.notes-list__container {
+  max-width: calc(800px + var(--padding-container) * 2);
+  margin: 0 auto;
+  padding-inline: var(--padding-container);
+}
+
+.notes-list__title {
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 40px);
+  text-align: center;
+  margin-bottom: clamp(15px, 5vw, 30px);
+}
+
+.notes-list__wrapper {
+  width: 100%;
+  background-color: var(--paper-color);
+  box-shadow: 0 1px 1px var(--paper-box-shadow), 0 10px 0 -5px var(--paper-color), 0 10px 1px -4px var(--paper-box-shadow), 0 20px 0 -10px var(--paper-color), 0 20px 1px -9px var(--paper-box-shadow);
+  padding: 30px 15px 20px;
+}
+
+.notes__forma {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.notes__input {
+  width: 100%;
+  height: 50px;
+  background-color: var(--default-color-ui-elements);
+  font-family: var(--font-note);
+  color: var(--input-color);
+  border-radius: 5px;
+  padding-left: 20px;
+}
+.notes__input:focus {
+  border: 2px solid var(--focus-color);
+}
+.notes__input::-moz-placeholder {
+  color: var(--accent-color);
+}
+.notes__input::placeholder {
+  color: var(--accent-color);
+}
+
+.notes__button {
+  width: clamp(140px, 30vw, 240px);
+  background-color: var(--default-color-ui-elements);
+  font-size: 18px;
+  color: var(--accent-color);
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.notes__button:focus {
+  border: 2px solid var(--focus-color);
+}
+@media (hover: hover) and (pointer: fine) {
+  .notes__button:hover {
+    background-color: var(--hover-color-ui-elements);
+  }
+}
+.notes__button:active {
+  box-shadow: var(--active-btn);
+}
+
+.notes__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  margin-top: clamp(15px, 5vw, 30px);
+}
+
+.notes__item {
+  width: 100%;
+  min-height: 50px;
+  font-family: var(--font-note);
+  color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+.note__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note__text {
+  display: inline-block;
+  width: clamp(420px, 70vw, 620px);
+  overflow-wrap: anywhere;
+}
+
+.note__btns {
+  display: flex;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  align-items: center;
+  align-self: self-start;
+}
+
+.note__btn {
+  background-color: var(--default-color-ui-elements);
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.note__btn:focus {
+  border: 2px solid var(--focus-color);
+}
+@media (hover: hover) and (pointer: fine) {
+  .note__btn:hover {
+    background-color: var(--hover-color-ui-elements);
+  }
+}
+.note__btn:active {
+  box-shadow: var(--active-btn);
+}
+
+.note__text--done {
+  color: var(--done-note-color);
+  text-decoration: line-through;
+}
+
+.footer {
+  width: 100%;
+  min-height: 48px;
+  background-color: var(--bg-footer);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ComicRelief";
+  src: url("../fonts/ComicRelief.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --main-font: "Inter", sans-serif;
+  --width-container: 1170px;
+  --padding-container: 15px;
+  --main-color: #ffffff;
+  --accent-color: #8000ff;
+  --bg-body: #0d0d0d;
+  --default-color-ui-elements: rgba(128, 0, 255, 0.2);
+  --hover-color-ui-elements: rgba(128, 0, 255, 0.12);
+  --focus-color: #6200f4;
+  --active-btn: 0 3px 0 #483d8b;
+  --done-note-color: #cdcdcd;
+  --error-color: #ff0000;
+  --default-bg-navbar: rgba(22, 22, 22, 0);
+  --active-bg-navbar: rgba(22, 22, 22, 1);
+  --navbar-shadow: 4px 2px 8px rgba(0, 0, 0, 0.2);
+  --font-note: "ComicRelief", sans-serif;
+  --paper-color: #ffffff;
+  --paper-box-shadow: rgba(0, 0, 0, 0.15);
+  --input-color: #161616;
+  --bg-footer: #161616;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--main-font);
+  font-weight: 400;
+  color: var(--main-color);
+  background-color: var(--bg-body);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: calc(var(--width-container) + var(--padding-container) * 2);
+  margin: 0 auto;
+  padding-inline: var(--padding-container);
+}
+
+@media (max-width: 769px) {
+  .notes__forma {
+    flex-wrap: wrap;
+  }
+  .notes__button {
+    width: 100%;
+  }
+}
+@media (max-width: 490px) {
+  .notes-list__wrapper {
+    padding: 20px 10px 15px;
+  }
+  .notes__input {
+    padding-left: 10px;
+  }
+  .note__main {
+    gap: 20px;
+  }
+  .notes__item {
+    padding: 0 5px;
+  }
+  .note__btns {
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+  }
+  .note__btn {
+    padding: 5px;
+  }
+}/*# sourceMappingURL=main.css.map */
