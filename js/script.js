@@ -97,8 +97,8 @@ function editNote(e) {
                         <button class="notes__button notes__button--save" type="submit">Сохранить</button>
                       </form>`
     parentTag.insertAdjacentHTML('beforeend', noteHTML)
+    const noteBtns = parentTag.querySelectorAll('.note__btn')
     if (document.querySelector('.notes__forma--save')) {
-      const noteBtns = parentTag.querySelectorAll('.note__btn')
       noteBtns.forEach(btn => {
         btn.style.backgroundColor = 'var(--default-color-ui-elements)'
         btn.setAttribute('disabled', 'true')
@@ -176,6 +176,9 @@ function deleteNote(e) {
     parentTag.remove()
   }
   saveToLocalStorage()
+}
+function disable(){
+  const noteBtns = parentTag.querySelectorAll('.note__btn')
 }
 function saveToLocalStorage() {
   localStorage.setItem('notes', JSON.stringify(notes))
