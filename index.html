@@ -27,10 +27,23 @@
             <h1 class="notes-list__title">Приложение для ваших заметок!</h1>
             <div class="notes-list__wrapper">
               <div class="notes">
-                <form action="#" class="notes__forma notes__forma--create">
-                  <input type="text" name="name" placeholder="Введите текст" class="notes__input notes__input--create" />
-                  <button class="notes__button notes__button--create" type="submit">Создать заметку</button>
-                </form>
+                <div class="notes__elems-control">
+                  <div class="notes__filter-wrapper">
+                    <select class="notes-filter">
+                      <option class="notes-filter__elem" value="Все">Все</option>
+                      <option class="notes-filter__elem" value="Активные">Активные</option>
+                      <option class="notes-filter__elem" value="Выполнные">Выполнные</option>
+                    </select>
+                  </div>
+                  <form action="#" class="notes__forma notes__forma--create">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Введите текст"
+                      class="notes__input notes__input--create" />
+                    <button class="notes__button notes__button--create" type="submit">Создать заметку</button>
+                  </form>
+                </div>
                 <ul class="notes__list"></ul>
               </div>
             </div>

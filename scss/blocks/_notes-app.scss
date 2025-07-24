@@ -19,11 +19,48 @@
     0 10px 1px -4px var(--paper-box-shadow), 0 20px 0 -10px var(--paper-color), 0 20px 1px -9px var(--paper-box-shadow);
   padding: 30px 15px 20px;
 }
+.notes__elems-control {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.notes__filter-wrapper {
+  position: relative;
+  flex-basis: 100%;
+  &::before {
+    content: '\25BC';
+    font-size: 14px;
+    display: block;
+    color: var(--accent-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+  }
+}
+.notes-filter {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: var(--default-color-ui-elements);
+  color: var(--accent-color);
+  padding: 0 15px;
+  appearance: none;
+  &:focus {
+    border: 2px solid var(--focus-color);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--hover-color-ui-elements);
+    }
+  }
+}
 .notes__forma {
   position: relative;
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex: auto;
 }
 .notes__input {
   width: 100%;

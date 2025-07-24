@@ -27,6 +27,7 @@ function navbarFixedMobile() {
 window.addEventListener('scroll', navbarFixedMobile)
 
 // *notes app
+const noteFilter = document.querySelector('.notes-filter')
 const forma = document.querySelector('.notes__forma--create')
 const noteInput = document.querySelector('.notes__input--create')
 const noteBtnCreate = document.querySelector('.notes__button--create')
@@ -58,6 +59,11 @@ forma.addEventListener('submit', e => {
     addNote()
     noteInput.style.borderColor = 'var(--focus-color)'
     noteInput.focus()
+    noteFilter.value = 'Все'
+    const noteElements = document.querySelectorAll('.note')
+    noteElements.forEach(note => {
+      note.style.display = 'flex'
+    })
   }
 })
 noteList.addEventListener('click', editNote)
@@ -177,9 +183,6 @@ function deleteNote(e) {
   }
   saveToLocalStorage()
 }
-function disable(){
-  const noteBtns = parentTag.querySelectorAll('.note__btn')
-}
 function saveToLocalStorage() {
   localStorage.setItem('notes', JSON.stringify(notes))
 }
@@ -201,5 +204,35 @@ notesItem.forEach(note => {
     noteEditBtn.removeAttribute('disabled', 'true')
     noteEditBtn.style.color = 'var(--accent-color)'
     noteEditBtn.style.cursor = 'pointer'
+  }
+})
+noteFilter.addEventListener('change', () => {
+  const noteElements = document.querySelectorAll('.note')
+  if (noteFilter.value === 'Все') {
+    noteElements.forEach(note => {
+      note.style.display = 'flex'
+    })
+  } else if (noteFilter.value === 'Активные') {
+    noteElements.forEach(note => {
+      note.style.display = 'none'
+    })
+    const noteActive = notes.filter(note => {
+      return note.status === false
+    })
+    noteActive.forEach(note => {
+      const htmlElement = document.getElementById(note.id)
+      htmlElement.style.display = 'flex'
+    })
+  } else if (noteFilter.value === 'Выполнные') {
+    noteElements.forEach(note => {
+      note.style.display = 'none'
+    })
+    const noteDone = notes.filter(note => {
+      return note.status === true
+    })
+    noteDone.forEach(note => {
+      const htmlElement = document.getElementById(note.id)
+      htmlElement.style.display = 'flex'
+    })
   }
 })
